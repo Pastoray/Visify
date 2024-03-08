@@ -23,6 +23,13 @@ On the home page, there are five input fields:
     ```
     The graph implementation also uses a **Depth-First Search (DFS) traversal** approach.
 
+## Technologies
+
+- HTML / CSS / SASS
+- Python / Flask
+- Webpack
+- Docker
+
 ## Contributing
 
 We welcome contributions from the community! If you would like to contribute to this project, simply fork the repository, make your changes, and submit a pull request.
@@ -33,6 +40,6 @@ Everything needed to run this app is included in the package.json dependencies a
 
 ## License
 
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).# Visify
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT)
 
 - [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
