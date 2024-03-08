@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block body %}
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+
+        h1 {
+            padding: 3rem;
+        }
+
+        form {
+            padding: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        input {
+            height: 2rem;
+            width: 18rem;
+            font-family: monospace;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            padding: 0rem 1rem;
+            background-color: hsl(0, 0%, 95%);
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        button {
+            height: 2rem;
+            width: 4rem;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            background-color: hsl(209, 60%, 48%);
+            font-family: monospace;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.1s;
+        }
+
+        button:active {
+            transform: scale(0.94);
+        }
+    </style>
+    <div class="home-container">
+        <h1 class="category-header">Trees</h1>
+
+        <h2 class="input-header">- Tree - (Array)</h2>
+        <form method="post" action="/trees/submit">
+            <input type="text" name="tree_input" autocomplete="off" placeholder="Tree Nodes Array"/>
+            <button type="submit">Submit</button>
+        </form>
+        
+        <h1 class="category-header">Linked Lists</h1>
+
+        <h2 class="input-header">- Singly Linked List - (Array)</h2>
+        <form method="post" action="/linked-lists/singly/submit">
+            <input type="text" name="singly_linked_list_input" autocomplete="off" placeholder="Singly Linked List Array"/>
+            <button type="submit">Submit</button>
+        </form>
+        
+        <h2 class="input-header">- Doubly Linked List - (Array)</h2>
+        <form method="post" action="/linked-lists/doubly/submit">
+            <input type="text" name="doubly_linked_list_input" autocomplete="off" placeholder="Doubly Linked List Array"/>
+            <button type="submit">Submit</button>
+        </form>
+
+        <h1 class="category-header">Graphs</h1>
+
+        <h2 class="input-header">- Graph - (Array)</h2>
+        <form method="post" action="/graphs/graph-array/submit">
+            <input type="text" name="graph_array_input" autocomplete="off" placeholder="Graph Nodes Array"/>
+            <button type="submit">Submit</button>
+        </form>
+
+        <h2 class="input-header">- Graph - (Map)</h2>
+        <form method="post" action="/graphs/graph-map/submit">
+            <input type="text" name="graph_map_input" autocomplete="off" placeholder="Graph Nodes Map"/>
+            <button type="submit">Submit</button>
+        </form>
+        
+    </div>
+{% endblock%}

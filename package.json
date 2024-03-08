@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "dev": "webpack && py app.py"
+  },
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    "css-loader": "^6.10.0",
+    "sass": "^1.71.1",
+    "sass-loader": "^14.1.1",
+    "style-loader": "^3.3.4",
+    "mini-css-extract-plugin": "^2.8.1",
+    "webpack-cli": "^5.1.4"
+  }
+}

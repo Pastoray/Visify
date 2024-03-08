@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block body %}
+    <style>
+        body {
+            overflow-y: hidden;
+        }
+    </style>
+    {% set len = nodes | length %}
+    <div style="height: 100vh; width: 100vw; display: grid; grid-template-columns: repeat({{ len + (2 * (len + 1)) }}, 4rem); grid-template-rows: repeat(1, 1fr);">
+    {% for i in range(len) %}
+            {% if nodes[i] != None %}
+                <div style="display: flex; justify-content: center; align-items: center; grid-row: {{ 1 }}; grid-column: {{ i + 1 + (2 * (i + 1)) }};">
+                    <span style="height: 4rem; width: 4rem; border: 2px solid black; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-family: monospace; font-size: 1.25rem; border-radius: 50%; background-color: white;">
+                        {{ nodes[i] }}
+                    </span>
+                    {% if i != len - 1 %}
+                        <svg height="100" width="320" style="position: absolute; z-index: -1;" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="160" y1="50" x2="320" y2="50" style="stroke:black;stroke-width:2"/>
+                            <line x1="320" y1="50" x2="300" y2="60" style="stroke:black;stroke-width:2"/>
+                            <line x1="320" y1="50" x2="300" y2="40" style="stroke:black;stroke-width:2"/>
+                        </svg>
+                    {% endif %}
+                </div>
+            {% endif %}
+    {% endfor %}
+    <div style="display: flex; justify-content: center; align-items: center; grid-row: {{ 1 }}; grid-column: {{ len + (2 * (len + 1)) }};">
+        <span style="height: 4rem; width: 4rem; display: flex; justify-content: center; align-items: center; font-family: monospace; font-size: 1.25rem; border-radius: 50%; background-color: white;">
+            {{ "" }}
+        </span>
+    </div>
+{% endblock%}
