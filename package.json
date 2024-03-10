@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "dev": "webpack && py app.py"
+    "dev": "webpack && py app.py",
+    "start": "webpack && python3 app.py"
   },
   "dependencies": {
     
