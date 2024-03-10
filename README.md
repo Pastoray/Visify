@@ -29,7 +29,9 @@ On the home page, there are five input fields:
 
 ## Technologies
 ### UI
-- HTML / CSS / SASS
+- HTML
+- CSS
+- SASS
 
 ### Server
 - Python / Flask
