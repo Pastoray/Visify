@@ -33,6 +33,7 @@ On the home page, there are five input fields:
 
 ### Server
 - Python / Flask
+- Jinja 2
 - Webpack
 - Docker
 
