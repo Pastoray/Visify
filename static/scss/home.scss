@@ -18,3 +18,15 @@
     font-family: monospace;
     color: hsl(209, 60%, 48%);    
 }
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-example {
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: hsl(0, 0%, 35%);
+    padding: 0rem 0.5rem;
+}

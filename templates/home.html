@@ -50,41 +50,67 @@
         }
     </style>
     <div class="home-container">
+
         <h1 class="category-header">Trees</h1>
 
         <h2 class="input-header">- Tree - (Array)</h2>
         <form method="post" action="/trees/submit">
-            <input type="text" name="tree_input" autocomplete="off" placeholder="Tree Nodes Array"/>
-            <button type="submit">Submit</button>
+            <div class="form-cotainer">
+                <div>
+                    <input type="text" name="tree_input" autocomplete="off" placeholder="Tree Nodes Array"/>
+                    <button type="submit">Submit</button>
+                </div>
+                <p class="input-example">- Ex: [1, 2, 3, 4, 5, 6, 7]</p>
+            </div>
         </form>
         
         <h1 class="category-header">Linked Lists</h1>
 
         <h2 class="input-header">- Singly Linked List - (Array)</h2>
         <form method="post" action="/linked-lists/singly/submit">
-            <input type="text" name="singly_linked_list_input" autocomplete="off" placeholder="Singly Linked List Array"/>
-            <button type="submit">Submit</button>
+            <div class="form-cotainer">
+                <div>
+                    <input type="text" name="singly_linked_list_input" autocomplete="off" placeholder="Singly Linked List Array"/>
+                    <button type="submit">Submit</button>
+                </div>
+                <p class="input-example">- Ex: [1, 2, 3]</p>
+            </div>
         </form>
         
         <h2 class="input-header">- Doubly Linked List - (Array)</h2>
         <form method="post" action="/linked-lists/doubly/submit">
-            <input type="text" name="doubly_linked_list_input" autocomplete="off" placeholder="Doubly Linked List Array"/>
-            <button type="submit">Submit</button>
+            <div class="form-cotainer">
+                <div>
+                    <input type="text" name="doubly_linked_list_input" autocomplete="off" placeholder="Doubly Linked List Array"/>
+                    <button type="submit">Submit</button>
+                </div>
+                <p class="input-example">- Ex: [1, 2, 3]</p>
+            </div>
         </form>
 
         <h1 class="category-header">Graphs</h1>
 
         <h2 class="input-header">- Graph - (Array)</h2>
         <form method="post" action="/graphs/graph-array/submit">
-            <input type="text" name="graph_array_input" autocomplete="off" placeholder="Graph Nodes Array"/>
-            <button type="submit">Submit</button>
+            <div class="form-cotainer">
+                <div>
+                    <input type="text" name="graph_array_input" autocomplete="off" placeholder="Graph Nodes Array"/>
+                    <button type="submit">Submit</button>
+                </div>
+                <p class="input-example">- Ex: [[1, 2], [1, 3], [3, 5]]</p>
+            </div>
         </form>
 
         <h2 class="input-header">- Graph - (Map)</h2>
         <form method="post" action="/graphs/graph-map/submit">
-            <input type="text" name="graph_map_input" autocomplete="off" placeholder="Graph Nodes Map"/>
-            <button type="submit">Submit</button>
+            <div class="form-cotainer">
+                <div>
+                    <input type="text" name="graph_map_input" autocomplete="off" placeholder="Graph Nodes Map"/>
+                    <button type="submit">Submit</button>
+                </div>
+                <p class="input-example">- Ex: { 1: [2, 3, 4], 2: [5, 6] }</p>
+            </div>
         </form>
-        
+
     </div>
 {% endblock%}

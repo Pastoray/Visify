@@ -23,9 +23,15 @@ On the home page, there are five input fields:
     ```
     The graph implementation also uses a **Depth-First Search (DFS) traversal** approach.
 
-## Technologies
+## Note
 
+- **This web application will display linked lists and graphs with cycles but once the app finds a node that it already went through it will simply stop to avoid errors and unexpected behaviour**
+
+## Technologies
+### UI
 - HTML / CSS / SASS
+
+### Server
 - Python / Flask
 - Webpack
 - Docker
