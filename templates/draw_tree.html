@@ -1,33 +1,46 @@
 {% extends "base.html" %}
 {% block body %}
-    {% set height = nodes | length %}
-    {% set width = nodes[-1] | length * 2 - 1%}
-    <div style="height: 100vh; width: 100vw; display: grid; grid-template-columns: repeat({{ width }}, 4rem); grid-template-rows: repeat({{ height }}, 8rem);">
-    {% for i in range(height) %}
-        {% set row_nodes = 2 ** i %}
-        {% for j in range(row_nodes) %}
-            {% if nodes[i][j] != None %}
-                <div style="display: flex; justify-content: center; align-items: center; grid-row: {{ i + 1 }}; grid-column: {{ (2 ** (height - i)) * j + (2 ** (height - i - 1)) }};">
-                    <span style="height: 4rem; width: 4rem; border: 2px solid black; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-family: monospace; font-size: 1.25rem; border-radius: 50%; background-color: white;">
-                        {{ nodes[i][j] }}
-                    </span>
-                    {% set wd = 2 ** (height - i - 1) * 64 %}
-                    {% if i != height - 1 %}
-                        <svg height="250" width="{{ wd }}" style="position: absolute; z-index: -1;" xmlns="http://www.w3.org/2000/svg">
-
-                            {% if nodes[i + 1][j * 2 + 1] != None %}
-                                <line x1="{{ wd / 2 }}" y1="125" x2="{{ wd }}" y2="250" style="stroke:black;stroke-width:2"/>
-                            {% endif %}
-
-                            {% if nodes[i + 1][j * 2] != None %}
-                                <line x1="{{ wd / 2 }}" y1="125" x2="0" y2="250" style="stroke:black;stroke-width:2"/>
-                            {% endif %}
-
-                        </svg>
-                    {% endif %}
-                </div>
-            {% endif %}
-        {% endfor %}
-    {% endfor %}
+{% set height = nodes | length %}
+{% set width = nodes[-1] | length * 2 - 1%}
+<div id="scroll-container"
+    style="height: 100vh; width: 100vw; display: grid; grid-template-columns: repeat({{ width }}, 4rem); grid-template-rows: repeat({{ height }}, 8rem);">
+    <div id="dummy-element" style="position: absolute; left: {{ width * 2.24 }}%; display: hidden;">
     </div>
+    {% for i in range(height) %}
+    {% set row_nodes = 2 ** i %}
+    {% for j in range(row_nodes) %}
+    {% if nodes[i][j] != None %}
+    <div
+        style="display: flex; justify-content: center; align-items: center; grid-row: {{ i + 1 }}; grid-column: {{ (2 ** (height - i)) * j + (2 ** (height - i - 1)) }};">
+        <span
+            style="height: 4rem; width: 4rem; border: 2px solid white; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-family: monospace; font-size: 1.25rem; border-radius: 50%; background-color: hsla(0, 0%, 20%, 1); color: white; user-select: none;">
+            {{ nodes[i][j] }}
+        </span>
+        {% set wd = 2 ** (height - i - 1) * 64 %}
+        {% if i != height - 1 %}
+        <svg height="250" width="{{ wd }}" style="position: absolute; z-index: -1;" xmlns="http://www.w3.org/2000/svg">
+
+            {% if nodes[i + 1][j * 2 + 1] != None %}
+            <line x1="{{ wd / 2 }}" y1="125" x2="{{ wd }}" y2="250" style="stroke: white;stroke-width:2" />
+            {% endif %}
+
+            {% if nodes[i + 1][j * 2] != None %}
+            <line x1="{{ wd / 2 }}" y1="125" x2="0" y2="250" style="stroke: white;stroke-width:2" />
+            {% endif %}
+
+        </svg>
+        {% endif %}
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+</div>
+<script defer>
+    document.addEventListener("DOMContentLoaded", function () {
+        const container = document.getElementById('scroll-container');
+        const dummyElement = document.getElementById('dummy-element');
+
+        dummyElement.scrollIntoView({ block: 'center', inline: 'center' });
+    });
+</script>
 {% endblock%}

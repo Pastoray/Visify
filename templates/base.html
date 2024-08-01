@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,20 @@
     <title>Visify</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 </head>
+<style>
+    body {
+        height: 100vh;
+        width: 100vw;
+        background-color: hsla(0, 0%, 0%, 0.9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
 <body>
     {% block body %}
     {% endblock %}
 </body>
+
 </html>

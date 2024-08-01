@@ -1,7 +1,5 @@
 from flask import Flask, render_template
 from blueprints.trees import trees_bp
-from blueprints.graphs import graphs_bp
-from blueprints.linked_lists import linked_lists_bp
 from dotenv import load_dotenv
 import os
 
@@ -11,8 +9,6 @@ app = Flask(__name__)
 app.secret_key = os.getenv('SECRET_KEY')
 
 app.register_blueprint(trees_bp, url_prefix="/trees")
-app.register_blueprint(linked_lists_bp, url_prefix="/linked-lists")
-app.register_blueprint(graphs_bp, url_prefix="/graphs")
 
 @app.route("/")
 def home():
